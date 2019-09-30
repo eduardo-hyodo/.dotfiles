@@ -8,6 +8,7 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'MarcWeber/vim-addon-mw-utils'   
 Plug 'tomtom/tlib_vim'   
 Plug 'garbas/vim-snipmate'
+Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
