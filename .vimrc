@@ -1,3 +1,6 @@
+source ~/.vim/plugin/plugins.vim
+source ~/.vim/plugin/nerdtree.vim
+
 set tabstop=4     " TAB becomes X spaces 
 set softtabstop=2 " TAB becomes X spaces in Vim
 set shiftwidth=2  " TAB 
@@ -13,6 +16,8 @@ set bs=2          " turn backspace on insert mode
 set noshowmode	  " hide default mode text
 set nocompatible  " ward off unexpected things from distro
 set wildmenu      " better cmd-line completion
+set ttimeoutlen=10 "keycode delays timeout
+set timeoutlen=500 "Mapping delays timeout
 set backspace=indent,eol,start " Allow bs over autoindent, line breaks & start of insert action
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -56,10 +61,6 @@ inoremap <M-k> <Esc>:m .-2<CR>==gi
 vnoremap <M-j> :m '>+1<CR>gv=gv
 vnoremap <M-k> :m '<-2<CR>gv=gv
 
-
-"Color scheme
-colorscheme desert
-
 if &term =~ "ansi"
   let &t_ti = "\<Esc>[?47h"
   let &t_te = "\<Esc>[?47l"
@@ -69,8 +70,13 @@ endif
 "set rtp+=/Users/hito/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
 set laststatus=2
 "set t_Co=256
+"""" enable 24bit true color
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
 
-source ~/.vim/plugin/plugins.vim
-source ~/.vim/plugin/nerdtree.vim
-
-
+"Color scheme
+colorscheme shades_of_purple
+let g:shades_of_purple_lightline = 1
+let g:lightline = { 'colorscheme': 'shades_of_purple' }
