@@ -15,6 +15,14 @@ set nocompatible  " ward off unexpected things from distro
 set wildmenu      " better cmd-line completion
 set backspace=indent,eol,start " Allow bs over autoindent, line breaks & start of insert action
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git etc. 
+set nobackup
+set nowb
+set noswapfile
+
 " Use clipboard as default register
 set clipboard=unnamed
 set clipboard=unnamedplus
