@@ -1,24 +1,28 @@
 source ~/.vim/plugin/plugins.vim
 source ~/.vim/plugin/nerdtree.vim
 
+set nocompatible  " ward off unexpected things from distro
+syntax on     " Enable syntax highlighting
+set number        " Turn on line numbers
 set tabstop=4     " TAB becomes X spaces 
 set softtabstop=2 " TAB becomes X spaces in Vim
 set shiftwidth=2  " TAB 
 set expandtab
 set pastetoggle=<F11> " paste/nopaste
-syntax on     " Enable syntax highlighting
-set number " Turn on line numbers
 set nobk		  " Dont create backup files
 set ai			  " Turn on auto indentation
 set si			  " Turn on smart indent
 set ru			  " Turn on the ruler
-set bs=2          " turn backspace on insert mode
+set bs=2          " Turn backspace on insert mode
+set sb            " split below
+set spr           " split right
 set noshowmode	  " hide default mode text
-set nocompatible  " ward off unexpected things from distro
 set wildmenu      " better cmd-line completion
 set ttimeoutlen=10 "keycode delays timeout
 set timeoutlen=500 "Mapping delays timeout
 set backspace=indent,eol,start " Allow bs over autoindent, line breaks & start of insert action
+set encoding=UTF-8
+set hidden "Allow hidden buffers, don't limit to 1 file per window/split
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -60,6 +64,11 @@ inoremap <M-j> <Esc>:m .+1<CR>==gi
 inoremap <M-k> <Esc>:m .-2<CR>==gi
 vnoremap <M-j> :m '>+1<CR>gv=gv
 vnoremap <M-k> :m '<-2<CR>gv=gv
+" move between slipts
+nnoremap <C-J> <C-W><C-J> "Ctrl-j to move down a split
+nnoremap <C-K> <C-W><C-K> "Ctrl-k to move up a split
+nnoremap <C-L> <C-W><C-L> "Ctrl-l to moveright a  split
+nnoremap <C-H> <C-W><C-H> "Ctrl-h to move left a split
 
 if &term =~ "ansi"
   let &t_ti = "\<Esc>[?47h"
