@@ -2,35 +2,49 @@ source ~/.vim/plugin/plugins.vim
 source ~/.vim/plugin/nerdtree.vim
 
 set nocompatible  " ward off unexpected things from distro
-syntax on     " Enable syntax highlighting
+syntax on         " Enable syntax highlighting
+set spell         " enable spell correction
 set number        " Turn on line numbers
 set tabstop=4     " TAB becomes X spaces 
 set softtabstop=2 " TAB becomes X spaces in Vim
 set shiftwidth=2  " TAB 
 set expandtab
 set pastetoggle=<F11> " paste/nopaste
-set nobk		  " Dont create backup files
 set ai			  " Turn on auto indentation
 set si			  " Turn on smart indent
 set ru			  " Turn on the ruler
 set bs=2          " Turn backspace on insert mode
 set sb            " split below
 set spr           " split right
-set noshowmode	  " hide default mode text
+set hls           " highlight words from search
+set ignorecase    " ignore capital case on search
+set noshowmode	  " hide default mode text under powerline
+set showcmd       " show cmd in the status line
 set wildmenu      " better cmd-line completion
+set ttyfast       " improve redraw of windows
 set ttimeoutlen=10 "keycode delays timeout
 set timeoutlen=500 "Mapping delays timeout
 set backspace=indent,eol,start " Allow bs over autoindent, line breaks & start of insert action
 set encoding=UTF-8
 set hidden "Allow hidden buffers, don't limit to 1 file per window/split
+set cursorline "show line on curso
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git etc. 
-set nobackup
+set nobackup		  " Dont create backup files
 set nowb
 set noswapfile
+set undolevels=1000 " Keep history undo
+
+" Files to ignore
+" Python
+set wildignore+=*.pyc,*.pyo,*/__pycahce__/*a
+" Temp files
+set wildignore+=*.swp,~*
+" Archives
+set wildignore+=*.zip,*.tar
 
 " Use clipboard as default register
 set clipboard=unnamed
@@ -93,3 +107,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 colorscheme shades_of_purple
 let g:shades_of_purple_lightline = 1
 let g:lightline = { 'colorscheme': 'shades_of_purple' }
+
+" Remove background background transparent
+" hi! Normal ctermbg=NONE guibg=NONE 
+" hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
