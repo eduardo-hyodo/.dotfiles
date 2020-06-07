@@ -3,16 +3,25 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
+" ===for search===
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-gitgutter'
+
+" ===for rails===
 Plug 'tpope/vim-rails'
 Plug 'thoughtbot/vim-rspec'
+
+" ===for snipmate===
 Plug 'MarcWeber/vim-addon-mw-utils'   
 Plug 'tomtom/tlib_vim'   
 Plug 'garbas/vim-snipmate'
+
+" ===for markdown===
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }  
+
+" ===for visual===
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'Rigellute/shades-of-purple.vim'
 "Plug 'ryanoasis/vim-devicons'
