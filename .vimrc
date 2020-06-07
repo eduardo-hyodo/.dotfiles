@@ -42,7 +42,7 @@ set number            " Turn on line numbers
 set tabstop=4         " TAB becomes X spaces 
 set softtabstop=2     " TAB becomes X spaces in Vim
 set shiftwidth=2      " TAB 
-set expandtab
+set expandtab         " Set the right amount of space to be a tab on insert
 set pastetoggle=<F11> " paste/nopaste
 set ai			      " Turn on auto indentation
 set si			      " Turn on smart indent
@@ -84,6 +84,10 @@ set wildignore+=*.zip,*.tar
 " Use clipboard as default register
 set clipboard=unnamed
 set clipboard=unnamedplus
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Map bindings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " esc in insert mode
 inoremap jj <esc>
